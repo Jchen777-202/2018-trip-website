@@ -1,0 +1,567 @@
+/* For mobile phones: */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+* {
+    box-sizing: border-box;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color:lightgray;
+}
+/*animation and styling for the hamburger icon https://codepen.io/erikterwan/pen/EVzeRP*/
+a {
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: mediumblue;
+}
+
+#menuToggle {
+  display: block;
+  position: fixed;
+  top: 25px;
+  left: 10px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+/*setup a invisible click registry*/
+#menuToggle input{
+  display: block;
+  width: 50px;
+  height: 42px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide the click area */
+  z-index: 2; /* place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*the hamburger*/
+#menuToggle span{
+  display: block;
+  width: 40px;
+  height: 6px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+/* Transforms the hamburger into a cross when the menu is opened*/
+#menuToggle input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*hide the middle one.*/
+#menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*make this go in the other direction*/
+#menuToggle input:checked ~ span:nth-last-child(2){
+  opacity: 1;
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*Make this fixed positioned at the top left of the screen*/
+#menu{
+  position: fixed;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  height: 110vh;
+  background: #ededed;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    background-color: none;
+}
+
+/*let fade it in from the left*/
+#menuToggle input:checked ~ ul{
+  transform: scale(1.0, 1.0);
+  opacity: 1;
+}
+/*end of hamburger css*/
+
+/*adjustments*/
+.position{
+    margin-top: 30px;
+}
+.position2{
+    margin-top:75px;
+}
+.shift {
+    margin-top: -4%;
+}
+.align {
+    text-align:justify;
+}
+
+p2 {
+    margin-right: 2%;
+    font-size: 110%;
+}
+
+p {
+    text-align: center;
+    font-size: 290%;
+    padding-top: 10%;
+    display: block;
+}
+p3 {
+    display: none;
+}
+p5 li {
+    list-style-type:none;
+    margin: 5px 0;
+    text-align: left;
+}
+
+/*default container*/
+.container{
+    width: 101.5%;
+    height: auto;
+    overflow: auto;
+    background-color:#081128/*001F54*/;
+    margin-left: -.8%
+}
+
+/*fonts*/
+.sans{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.slab{
+    font-family: 'Josefin Slab', serif;   
+}
+.comfortaa{
+    font-family: 'Comfortaa', cursive;
+}
+.marker{
+    font-family: 'Permanent Marker', cursive;
+}
+.actor{
+    font-family: 'Actor', sans-serif;
+}
+/*nav bar*/
+.navigation {
+    width: 100%;
+    height: 110px;
+    background-color:none;
+}
+
+
+/*the image on the splash page for mobile
+(replacing the video)*/
+.backgroundimg {
+    background: url(images/viewfinal.png);
+    background-position:center;
+    background-size: cover;
+    display:block;
+    width: 107%;
+    margin-left: -4%;
+    height: 800px;
+    overflow:hidden;
+    margin-top:-6%;
+}
+/*splash page text adjustments*/
+.coloring{
+    color: deepskyblue;
+    text-shadow: 1.5px 1.5px 1.5px deepskyblue;
+}
+p3 li {
+    padding-left: 5%;
+}
+/*used for spacing the content apart*/
+.block {
+    width: 100%;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+}
+.block2{
+    width: 100%;
+    height: 62px
+}
+.block3 {
+    width: 100%;
+    height: 23px;
+}
+.block4 {
+    width: 100%;
+    height: 100px;
+    display: none;
+}
+
+/*All images*/
+#ship {
+    background-image: url(images/nasaship.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#travel {
+    background-image: url(images/travel.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#airport {
+    background-image: url(images/airport.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#space {
+    background-image: url(images/space.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#group {
+    background-image: url(images/group.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+#relax {
+    background-image: url(images/relax.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#bridge {
+    background-image: url(images/bridge.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#academy {
+    background-image: url(images/academy.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#explore {
+    background-image: url(images/explore.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#memory {
+    background-image: url(images/memorie.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+}
+#kennedy {
+    background-image: url(images/kennedy.jpg);
+    width: 120%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center top;
+    margin-top: 2%;
+}
+#launchpad {
+    background-image: url(images/launchpad.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    background-position: top;
+}
+#atx {
+    background-image: url(images/atx.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin-top: 2%;
+    background-position: top;
+}
+#okey {
+    background-image: url(images/okey.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+#danielle {
+    background-image: url(images/daniele.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+#kelly {
+    background-image: url(images/mccorrie.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+#orlando {
+    background-image: url(images/orlando.PNG);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position:center;
+    margin-top: 2%;
+}
+#sanfran {
+    background-image: url(images/sanfran.PNG);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+#lunch {
+    background-image: url(images/Lunch.jpg);
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 2%;
+}
+/*disabling the video for mobile*/
+.fullscreen-bg {
+    display: none;
+}
+
+/*this is to put the text in a position that isnt up agaisnt the border*/
+.margin {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.bgcolor {
+    background-color:#081128;
+}
+.hidden{
+    display: block;
+}
+.enlarger{
+    font-size: 150%
+}
+
+h2{
+    font-size: 200%
+}
+#title{
+    margin-left: 75px;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-t-1 {width: 8.33%;}
+    .col-t-2 {width: 16.66%;}
+    .col-t-3 {width: 25%;}
+    .col-t-4 {width: 33.33%;}
+    .col-t-5 {width: 41.66%;}
+    .col-t-6 {width: 50%;}
+    .col-t-7 {width: 58.33%;}
+    .col-t-8 {width: 66.66%;}
+    .col-t-9 {width: 75%;}
+    .col-t-10 {width: 83.33%;}
+    .col-t-11 {width: 91.66%;}
+    .col-t-12 {width: 100%;}
+    /*styling the video and displaying it at this resolution*/
+    .fullscreen-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -100;
+        background-size: cover;
+        display:inline-flex;
+    }
+
+    .fullscreen-bg__video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+    }
+    .backgroundimg{
+        display: none;
+    }
+    p3 {
+        text-align: center;
+        font-size: 500%;
+        padding-top: 15%;
+        display:flex;
+        margin-right: 3%;
+    }
+    .hidden{
+        display: block;
+    }
+    #title{
+        margin-left: 75px;
+    }
+    .block4 {
+        width: 100%;
+        height: 100px;
+        display: block;
+    }
+
+
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .shift {
+        margin-top: -2%;
+    }
+    /*styling the video and displaying it at this resolution*/
+    .fullscreen-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -100;
+        background-size: cover;
+    }
+
+    .fullscreen-bg__video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+    }
+    .backgroundimg{
+        display: none;
+    }
+    p3 {
+        text-align: center;
+        font-size: 500%;
+        padding-top: 15%;
+        display:flex;
+        margin-left: 3%;
+    }
+    .hidden{
+        display: block;
+    }
+    .enlarger{
+        font-size: 200%
+    }
+    #title{
+        margin-left: 75px;
+    }
+    #title2{
+        margin-left: 200px;
+    }
+    .block4 {
+        width: 100%;
+        height: 100px;
+        display: block;
+    }
+
+
+}
